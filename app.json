@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-expo-app",
-    "slug": "my-expo-app",
+    "name": "Watering System App",
+    "slug": "watering-system-app",
     "version": "1.0.0",
 
     "scheme": "my-expo-app",
