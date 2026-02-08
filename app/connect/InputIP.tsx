@@ -11,9 +11,7 @@ const InputIP = ({ label = "IP", value, onChangeText, ...props }: InputIPProps) 
     const inputValue = value !== undefined ? value : localValue;
 
     const handleChange = (text: string) => {
-        const cleaned = text.replace(/\D/g, '');
-        const truncated = cleaned.slice(0, 12);
-        const formatted = truncated.match(/.{1,3}/g)?.join('.') ?? '';
+        const formatted = text.replace(',', '.').replace(/[^0-9.]/g, '');
 
         if (value === undefined) {
             setLocalValue(formatted);
@@ -29,7 +27,7 @@ const InputIP = ({ label = "IP", value, onChangeText, ...props }: InputIPProps) 
             <TextInput
                 className={styles.input}
                 placeholder="192.168.XXX.XXX"
-                keyboardType="numeric"
+                keyboardType="decimal-pad"
                 maxLength={15}
                 {...props}
                 value={inputValue}
