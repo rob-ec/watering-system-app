@@ -40,8 +40,34 @@ export function clockToDate(clock: Clock): string {
   );
 }
 
-export function clockToWeekDay(clock: Clock): string {
+export function clockToWeekDay(clock: Clock, short: boolean = false): string {
   const days = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
 
-  return days[clock.time.dotw];
+  return short ? days[clock.time.dotw].slice(0, 3) : days[clock.time.dotw];
+}
+
+export function clockToMonth(clock: Clock, short: boolean = false): string {
+  const months = [
+    'janeiro',
+    'fevereiro',
+    'março',
+    'abril',
+    'maio',
+    'junho',
+    'julho',
+    'agosto',
+    'setembro',
+    'outubro',
+    'novembro',
+    'dezembro',
+  ];
+
+  return short ? months[clock.time.month - 1].slice(0, 3) : months[clock.time.month - 1];
+}
+
+export function clockToElegantDate(clock: Clock): string {
+  let dayName = clockToWeekDay(clock);
+  dayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+
+  return `${dayName}, ${clock.time.day} de ${clockToMonth(clock)} de ${clock.time.year}`;
 }

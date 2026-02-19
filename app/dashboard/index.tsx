@@ -1,8 +1,5 @@
 import { Stack } from 'expo-router';
-
 import { ScrollView, Text, View } from 'react-native';
-
-import { Container } from '@/components/Container';
 import { useEffect, useState } from 'react';
 import { Status } from '@/types/status';
 import { getStatus, getStoredDeviceConnection, irrigatorOff, irrigatorOn } from '@/services/DeviceService';
@@ -71,7 +68,7 @@ export default function Dashboard() {
 
 const styles = {
     screen: `bg-white`,
-    container: `items-center flex flex-col justify-center bg-white gap-5`,
+    container: `items-center flex flex-col justify-center bg-white gap-5 p-1`,
     separator: `h-[1px] my-7 w-4/5 bg-gray-200`,
     title: `text-xl font-bold`,
     buttonsContainer: `flex flex-col justify-center w-full gap-2 mx-auto py-10`
