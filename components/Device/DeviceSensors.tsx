@@ -19,7 +19,7 @@ export const DeviceSensors = ({ sensors }: DeviceIrrigatorProps) => {
                     <Text className={styles.sensor.label}>Umidade</Text>
                 </View>
                 <View className={styles.sensor.container}>
-                    <TemperatureIcon temperature={30} size={32} />
+                    <TemperatureIcon temperature={temperature} size={32} />
                     <Text className={styles.sensor.value}>{temperature}°C</Text>
                     <Text className={styles.sensor.label}>Temperatura</Text>
                 </View>
